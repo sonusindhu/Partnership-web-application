@@ -16,7 +16,7 @@ import { AuthNavComponent } from './common/auth-nav.component';
 export const routes: Routes = [
 
 	{ path: 'admin', children:[
-	    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] , data:{title:'Dashboard | Online Course Enrollment System'}},
+	    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] , data:{title:'Dashboard'}},
 	    
 
 	    { path: '' , component: AuthHeaderComponent, outlet: 'header'},
@@ -24,15 +24,13 @@ export const routes: Routes = [
 	    { path: '' , component: AuthFooterComponent, outlet: 'footer'}
 	]},
 
-	{ path: '', component: HomeComponent, pathMatch: 'full', data:{title:'Online Course Enrollment System'}},
-	{ path: 'login', component: LoginComponent , data:{title:'Login | Online Course Enrollment System'}},
-	{ path: 'signup', component: SignupComponent , data:{title:'Signup | Online Course Enrollment System'}},
+	{ path: '', redirectTo: '/admin/dashboard', pathMatch: 'full',  canActivate: [AuthGuard] ,data:{title:'Home page'}},
+	{ path: 'login', component: LoginComponent , data:{title:'Login'}},
+	{ path: 'signup', component: SignupComponent , data:{title:'Signup'}},
 
 
 	{ path: 'notfound', component: NotfoundComponent , data:{title:'404 Not Found'}},
 	
-	// user login
-	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] , data:{title:'Dashboard | Online Course Enrollment System'}},
 	
 	// otherwise redirect to notfound
     { path: '**', redirectTo: 'notfound'}
