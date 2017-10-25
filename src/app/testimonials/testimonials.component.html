@@ -1,0 +1,36 @@
+<div class="container-fluid about_page_sec">
+	<div class="overlay"></div>
+	<div class="container about_container">
+		<h3 class="about_heading">TESTIMONIAL</h3>
+	</div>
+</div>
+
+<div class="container-fluid welcome_sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="hwai_head">Hawaii Online Continuing Education (CE)</h3>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row faq_row">
+			<div class="about_contnt_sec">
+				<h3>Student Testimonials</h3>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="testimonial_main_box" *ngFor="let testimonial of testimonials">
+					<img src="http://sonu.pnf-sites.info/work1/public/testimonial/{{testimonial.image}}" style="float: left; margin-right: 20px; width: 50px;">
+					<p> {{testimonial.message}}</p>
+					<div class="client_name_sec pull-right">
+						<p>-- {{testimonial.name}}</p>
+					</div>
+				</div>					
+			</div>
+		</div>
+
+	</div>
+</div>
