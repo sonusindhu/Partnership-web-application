@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService }      from './services/auth.service';
-import { CartService } from './services/cart.service'
 
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
@@ -20,7 +19,7 @@ export class AppComponent  implements OnInit {
 	public current_user:any;
 	public myCart:any;
 
-	constructor(public authService: AuthenticationService, public cartService:CartService, private router: Router, private titleService: Title, private activatedRoute: ActivatedRoute) {
+	constructor(public authService: AuthenticationService, private router: Router, private titleService: Title, private activatedRoute: ActivatedRoute) {
 		if (localStorage.getItem("user") === null){
 			this.authService.isLoggedIn = false;
 		}else{

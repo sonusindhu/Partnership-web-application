@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
-import { AuthenticationService } from '../services/auth.service'
+import { AuthenticationService } from '../services/auth.service';
+
+import * as CryptoJS from 'crypto-js';
 
 @Injectable()
 export class CommonService {
@@ -17,30 +19,6 @@ export class CommonService {
 	 * @param {string} url [description]
 	 */
 	getDataObservable(url:string) {
-		return this.http.get(this.API_ENDPOINT+url)
-		.map(data => {
-			data.json();
-			return data.json();
-		});
-	}
-
-	/**
-	 * [getCourses description]
-	 * @param {string} url [description]
-	 */
-	getCourses(url:string) {
-		return this.http.get(this.API_ENDPOINT+url)
-		.map(data => {
-			data.json();
-			return data.json();
-		});
-	}
-
-	/**
-	 * [getFaqs description]
-	 * @param {string} url [description]
-	 */
-	getFaqs(url:string) {
 		return this.http.get(this.API_ENDPOINT+url)
 		.map(data => {
 			data.json();
@@ -80,23 +58,35 @@ export class CommonService {
 
 
 	/**
-	 * [getEnrollments description]
+	 * [getCustomers description]
 	 */
-	getEnrollments() {
-		return this.http.get(this.API_ENDPOINT+"enrollments/"+this._auth.current_user.id+"?api_token="+this._auth.current_user.api_token)
+	getCustomers() {
+		
+	    var url = "https://api.unleashedsoftware.com/Customers?";
+
+	    var urlParam = "pageSize=100";
+	    var hash = CryptoJS.HmacSHA256(urlParam, 'v3ZjxcFpYzadXEIhXcjbaqpEX6eHh4d3Y9uYgtqqa2MQ4yJdUTmPI5pK7hZaTkQMmaFJMGTA0D0gZOdnkv6Q==');
+	    var hash64 = CryptoJS.enc.Base64.stringify(hash);
+
+
+		let headers = new Headers();
+	    headers.append('Content-Type', 'application/json');
+	    headers.append('api-auth-id', '88d40b83-1e5c-4615-a7c2-b5c5abe80556');
+	    headers.append('Accept', 'application/json');
+	    headers.append('api-auth-signature', hash64);
+
+	    
+		return this.http.get(url+urlParam , {headers:headers})
 		.map(data => {
 			data.json();
 			return data.json();
 		});
+
 	}
 
 
-	getOrders() {
-		return this.http.get(this.API_ENDPOINT+"orders/"+this._auth.current_user.id+"?api_token="+this._auth.current_user.api_token)
-		.map(data => {
-			data.json();
-			return data.json();
-		});
+	getSignature(args:string , key:string){
+
 	}
 
 }
