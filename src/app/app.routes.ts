@@ -23,7 +23,10 @@ import { ReportComponent } from './admin/report/report.component';
 // Route Configuration
 export const routes: Routes = [
 
-	{ path: 'admin', children:[
+	{ path: '', children:[
+
+		{ path: '', redirectTo: '/dashboard', pathMatch: 'full',  canActivate: [AuthGuard] ,data:{title:'Home page'}},
+		
 	    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] , data:{title:'Dashboard'}},
 	    { path: 'builders', component: BuildersComponent, canActivate: [AuthGuard] , data:{title:'Builders'}},
 	    { path: 'builder/details/:id', component: BuilderDetailsComponent, canActivate: [AuthGuard] , data:{title:'Builders details'}},
@@ -37,9 +40,16 @@ export const routes: Routes = [
 	    { path: '' , component: AuthFooterComponent, outlet: 'footer'}
 	]},
 
-	{ path: '', redirectTo: '/admin/dashboard', pathMatch: 'full',  canActivate: [AuthGuard] ,data:{title:'Home page'}},
-	{ path: 'login', component: LoginComponent , data:{title:'Login'}},
-	{ path: 'signup', component: SignupComponent , data:{title:'Signup'}},
+	
+
+
+	{ path: 'auth', children:[
+
+	    { path: 'login', component: LoginComponent , data:{title:'Login'}},
+		{ path: 'signup', component: SignupComponent , data:{title:'Signup'}},
+	    
+	]},
+	
 
 
 	{ path: 'notfound', component: NotfoundComponent , data:{title:'404 Not Found'}},

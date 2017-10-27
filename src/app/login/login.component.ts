@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 				} else{
 		        	localStorage.setItem("user", JSON.stringify(data));
 		        	//this._router.navigate(['/dashboard']);
-		        	window.location.href = "/admin/dashboard"
+		        	window.location.href = "/dashboard"
 		        }
 			}
 		);

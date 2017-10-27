@@ -23,7 +23,7 @@ export class AuthenticationService {
   logout() {
 
     localStorage.removeItem("user");
-    window.location.href = "/login";
+    window.location.href = "/auth/login";
     //this._router.navigate(['login']);
   }
 
