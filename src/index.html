@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="title" content="Online enroll the courses" />
 	<title>Partnership CRM</title>
-	<meta name="description" content="Online enroll the courses" />
+	<meta name="description" content="Partnership CRM" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -19,28 +19,20 @@
     <link href="assets/css/core.css" rel="stylesheet" type="text/css">
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="assets/css/components.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/pages.css" rel="stylesheet" type="text/css">
+    <!-- <link href="assets/css/pages.css" rel="stylesheet" type="text/css"> -->
     <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
 
     <!-- DataTables -->
-    <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" /> -->
+
+    <link rel="stylesheet" type="text/css" href="assets/plugins/jquery.steps/jquery.steps.css" />
     
 
     <script src="assets/js/modernizr.min.js"></script>
 
 
-
-
-</head>
-<body class="fixed-left">
-
-
-	<app-root></app-root>
-
-
-
-<script>
+    <script>
     var resizefunc = [];
 </script>
 <!-- Plugins  -->
@@ -56,23 +48,51 @@
 <script src="assets/js/jquery.scrollTo.min.js"></script>
 
 
-<script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script> -->
 <!-- skycons -->
-<script src="assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
+<!-- <script src="assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script> -->
 
+<!--Form Wizard-->
+<script src="assets/js/modified-jquery.steps.js" type="text/javascript"></script>
+<!-- <script type="text/javascript" src="assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+ -->
 
+ <style type="text/css">
+ 	.wizard > .content > .body{
+ 		position: relative;
+ 	}
+ </style>
 <!-- Custom main Js -->
-<!-- <script src="assets/js/jquery.core.js"></script> -->
-<!-- <script src="assets/js/jquery.app.js"></script> -->
+<script src="assets/js/jquery.core.js"></script>
+<script src="assets/js/jquery.app.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(document).on("click" , ".has_sub" , function(){
 			$(this).find(".list-unstyled").toggle("slow");
 		});
 
+		/*$("#wizard-validation-form").steps({
+	        headerTag: "h3",
+	        bodyTag: "section",
+	        transitionEffect: "slideLeft",
+	        autoFocus: true,
+	        enableAllSteps:true
+	    });*/
+
 		//$('#datatable-responsive').DataTable();
 	});
 </script>
+
+
+
+
+</head>
+<body class="fixed-left">
+
+
+	<app-root></app-root>
+
+
 
 </body>
 </html>

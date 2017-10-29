@@ -7,6 +7,7 @@ import { CommonService } from './services/common.service';
 import { AuthenticationService } from './services/auth.service';
 import { AuthGuard } from './_guard/auth.service';
 import { routing } from './app.routes';
+import { FormWizardModule } from 'angular2-wizard';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -47,7 +48,8 @@ import { PaymentComponent } from './admin/payment/payment.component';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    FormWizardModule
   ],
   providers: [CommonService,AuthenticationService,AuthGuard],
   bootstrap: [AppComponent]

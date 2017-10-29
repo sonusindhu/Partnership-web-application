@@ -14,7 +14,7 @@ File: Topbar,Left-sidebar,Right-sidebar
   z-index: 999;
 }
 .topbar .topbar-left {
-  background: #3bafda;
+  background: #1e1e1e;
   float: left;
   height: 70px;
   position: relative;
@@ -34,7 +34,7 @@ File: Topbar,Left-sidebar,Right-sidebar
   text-align: center;
 }
 .navbar-default {
-  background-color: #3bafda;
+  background-color: #1e1e1e;
   border-radius: 0;
   border: none;
   margin-bottom: 0;
@@ -116,7 +116,7 @@ File: Topbar,Left-sidebar,Right-sidebar
 }
 .noti-success {
   color: #00b19d;
-  border: 2px solid #00b19d;
+  border: 2px solid #c5e74e;
 }
 .noti-info {
   color: #3ddcf7;
@@ -197,7 +197,7 @@ input.app-search-input:-ms-input-placeholder {
   z-index: 2;
 }
 .side-menu.left {
-  background: #2a3142;
+  background:#c5e74e;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   position: absolute;
   top: 70px;
@@ -271,7 +271,7 @@ body.fixed-left .side-menu.left {
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
-  color: #98a6ad;
+  color: #1e1e1e;
 }
 #sidebar-menu ul li .menu-arrow:before {
   content: "\f1b6";
@@ -292,13 +292,13 @@ body.fixed-left .side-menu.left {
   color: rgba(255, 255, 255, 0.8);
 }
 #sidebar-menu ul ul a {
-  color: rgba(255, 255, 255, 0.4);
+  color: #1e1e1e;
   display: block;
   padding: 10px 25px 10px 65px;
   transition: all 0.3s ease-out;
 }
 #sidebar-menu ul ul a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #1e1e1e;
 }
 #sidebar-menu ul ul a i {
   margin-right: 5px;
@@ -307,7 +307,7 @@ body.fixed-left .side-menu.left {
   padding-left: 80px;
 }
 #sidebar-menu > ul > li > a {
-  color: rgba(255, 255, 255, 0.5);
+  color: #1e1e1e;
   border-left: 2px solid transparent;
   display: block;
   padding: 12px 25px;
@@ -315,7 +315,7 @@ body.fixed-left .side-menu.left {
 #sidebar-menu > ul > li > a:hover {
   border-left: 2px solid #3bafda;
   text-decoration: none;
-  color: #ffffff;
+  color: #1e1e1e;
 }
 #sidebar-menu > ul > li > a > span {
   vertical-align: middle;
@@ -336,7 +336,7 @@ body.fixed-left .side-menu.left {
 }
 #sidebar-menu > ul > li > a.active {
   border-left: 2px solid #3bafda;
-  color: #ffffff;
+  color: #1e1e1e;
 }
 .menu-title {
   padding: 12px 20px !important;
